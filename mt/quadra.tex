@@ -19,21 +19,21 @@
 \usepackage{tkz-euclide} 
 \usepackage{listings}
 \usepackage{gvv}      
-\parindent 0px
 %\def\inputGnumericTable{}                                 
 \usepackage[latin1]{inputenc}                                
 \usepackage{color}                                            
 \usepackage{array}                                            
 \usepackage{longtable}                                       
 \usepackage{calc}                                             
-\usepackage{multirow}                                         
+\usepackage{multirow}    
 \usepackage{hhline}                                           
-\usepackage{ifthen}                                           
+\usepackage{ifthen}     
+
 \usepackage{lscape}
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{float}
-
+\usepackage{multicol}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
@@ -42,6 +42,8 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}{Example}[section]
 \newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
@@ -51,56 +53,111 @@
 \bibliographystyle{IEEEtran}
 \vspace{3cm}
 
-\title{3.\_B.Mains}
+\title{3\_B\_Mains}
 \author{ai24btech11020 - Rishika Kotha}
-\begin{enumerate}
+
 \maketitle
-\item[24.] The equation $e^{\sin x}$-$e^{-\sin x}$-4=0 has:\\[2pt][2012]\\[6pt]
-        (a)   infinite number of real roots\\[2pt]
-        (b)   no real roots\\[2pt]
-        (c)   exactly one real root\\[2pt]
-        (d)   exactly four roots\\[6pt]
-\item[25.] The real number k for which the equation, $2x^3+3x+4=0$ has two distinct real roots in [0,1]\\[2pt][JEE M 2013]\\[6pt]
-        (a)  lies between 1 and 2\\[2pt]
-        (b)  lies between 2 and 3\\[2pt]
-        (c)  lies between -1 and 0\\[2pt]
-        (d)  does not exist.\\[6pt]
-\item[26.] The number of values of k, for which the system of equations:\\[2pt][JEE M 2013]\\[6pt]
-     (k+1)x+8y=4k\\[2pt]
-     kx+(k+3)y=3k-1\\[2pt]
-has no solution, is\\[2pt]
-(a)  infinite\hspace{2.4cm}(b)  1\\[2pt]
-(c)  2\hspace{3.4cm}(d)  3\\[6pt]
-\item[27.] If the equations $x^2+2x+3=0$ and $ax^2+bx+c=0$,a,b,c$\in$ R , have a   common   root , then a:b:c is\\[2pt][JEE M 2013]\\[6pt]
-(a)  1:2:3\hspace{2.7cm}(b)  3:2:1\\[2pt]
-(c)  1:3:2\hspace{2.7cm}(d)  3:1:2\\[6pt] 
-\item[28.]If a $\in$ R and the equation  $-3(x-[x])^2 +2(x-[x])+a^2 =0$ (where [x] denotes the greatest integer $\leq$ x) has no integral solution, then all possible values of a lie in the interval:\\[2pt]
-[JEE M 2014]\\[6pt]
-		(a)  (-2,-1)\hspace{2.5cm}(b)  $(-\infty,2)\cup(2,\infty)$\\[2pt]
-		(c)  $(-1,0)\cup(0,1)$\hspace{1.1cm}(d)  (1,2)\\[6pt]
-\item[29.]Let\quad$\alpha$ and $\beta$ be the roots of equation $px^2 + qx +r = 0$, $p\neq0$. If p,q,r are in A.P. and $\frac{1}{\alpha}+\frac{1}{\beta}=4$, then the value of $|\alpha-\beta|$ is:\\[6pt][JEE M 2014]\\[6pt]
-(a)  $\frac{\sqrt{34}}{9}$\hspace{5cm}(b)  $\frac{2\sqrt{13}}{9}$\\[2pt]
-(c)  $\frac{\sqrt{61}}{9}$\hspace{5cm}(d)$\frac{2\sqrt17}{9}$\\[6pt]
-\item[30.] Let $\alpha$ and $\beta$ be the roots of the equation $x^2-6x-2=0$. If $a_n=\alpha^n-\beta^n$, for $n\geq1$, then the value of $\frac{a_{10}-2a_8}{2a_9}$ is equal to:\\[6pt]
-[JEE M 2015]\\[6pt]
-(a)  3\hspace{5cm}(b)-3\\[2pt]
-(c)  6\hspace{5cm}(d)-6\\[6pt]
-\item[31.] The sum of all real values of x satisfying the equation $\brak{(x^2-5x+5)}^{x^2+4x+60}=1$ is :\\[6pt][JEE M 2016]\\[6pt]
-(a)  6\hspace{5cm}(b)5\\[2pt]
-(c)  3\hspace{5cm}(d)-4\\[6pt]
-\item[32.]If $\alpha,\beta\in C$ are the distinct roots, of the equation $x^2-x+1=0$ , then $\alpha^{101}+\beta^{107}$ is equal to :\\[2pt][JEE M 2018]\\[6pt]
-(a)  0\hspace{5cm}(b)  1\\[2pt]
-(c)  2\hspace{5cm}(d)  -1\\[6pt]
-\item[33.]Let p,q$\in$ R. If $2-\sqrt{3}$ is a root of the quadratic equation, $x^2+px+q=0$,then:\\[6pt]
-[JEE M 2019- 9 April(M)]\\[6pt]
-(a)  $p^2-4q+12=0$ \hspace{1cm}(b)$q^2-4p-16=0$\\[2pt]
-(c)  $q^2+4p+14=0$ \hspace{1cm}(d)$p^2-4q-12=0$\\[6pt]
+\bigskip                                                                                          \renewcommand{\thefigure}{\theenumi}             \renewcommand{\thetable}{\theenumi}
 
-\bigskip
+\begin{enumerate}[start=24]
+\item The equation $e^{\sin x}$-$e^{-\sin x}$-4=0 has:
+	\hfill\textbf{[2012]}\\
+	\begin{enumerate}[label=\alph*.]
+	\item  infinite number of real roots
+	\item  no real roots
+	\item exactly one real root
+	\item exactly four roots
+	\end{enumerate}
 
-\renewcommand{\thefigure}{\theenumi}
-\renewcommand{\thetable}{\theenumi}
-
+\item The real number k for which the equation, $2x^3+3x+4=0$ has two distinct real roots in [0,1]        \hfill\textbf{[JEE M 2013]}\\
+	\begin{enumerate}[label=\alph*.]
+        \item  lies between 1 and 2
+	\item  lies between 2 and 3
+	\item  lies between -1 and 0
+	\item  does not exist.
+	\end{enumerate}
+\item The number of values of k, for which the system of equations:
+	\hfill\textbf{[JEE M 2013]}\\
+     (k+1)x+8y=4k\\
+     kx+(k+3)y=3k-1\\
+     has no solution, is\\
+	\begin{enumerate}[label=\alph*.]
+	\begin{multicols}{2}
+	\item   infinite
+	\item     1
+	\item     2
+	\item     3
+	\end{multicols}
+	\end{enumerate}
+\item If the equations $x^2+2x+3=0$ and $ax^2+bx+c=0$,a,b,c$\in$ R , have a   common   root , then a:b:c is
+	\hfill\textbf{[JEE M 2013]}\\
+	\begin{enumerate}[label=\alph*.]
+	\begin{multicols}{2}
+	\item  1:2:3
+	\item  3:2:1
+	\item  1:3:2   
+	\item  3:1:2
+	\end{multicols}
+	\end{enumerate}
+\item If a $\in$ R and the equation  $-3(x-[x])^2 +2(x-[x])+a^2 =0$ (where [x] denotes the greatest integer $\leq$ x) has no integral solution, then all possible values of a lie in the interval:            \hfill\textbf{[JEE M 2014]}\\
+          \begin{enumerate}[label=\alph*.]
+	  \begin{multicols}{2}
+	  \item (-2,-1)
+	  \item $(-\infty,2)\cup(2,\infty)$
+	  \item $(-1,0)\cup(0,1)$
+   	  \item (1,2)
+	  \end{multicols}
+	  \end{enumerate}
+\item Let\quad$\alpha$ and $\beta$ be the roots of equation $px^2 + qx +r = 0$, $p\neq0$. If p,q,r are in A.P. and $\frac{1}{\alpha}+\frac{1}{\beta}=4$, then the value of $|\alpha-\beta|$ is
+	\hfill\textbf{[JEE M 2014]}\\
+	\begin{enumerate}[label=\alph*.]
+	\begin{multicols}{2}
+	\item $\frac{\sqrt{34}}{9}$
+	\item $\frac{2\sqrt{13}}{9}$
+	\item $\frac{\sqrt{61}}{9}$
+	\item $\frac{2\sqrt17}{9}$
+	\end{multicols}
+	\end{enumerate}
+\item Let $\alpha$ and $\beta$ be the roots of the equation $x^2-6x-2=0$. If $a_n=\alpha^n-\beta^n$, for $n\geq1$, then the value of $\frac{a_{10}-2a_8}{2a_9}$ is equal to:
+	\hfill\textbf{[JEE M 2015]}\\
+	\begin{enumerate}[label=\alph*.]
+	\begin{multicols}{2}
+        \item  3
+	\item -3
+	\item  6
+	\item -6
+	\end{multicols}
+	\end{enumerate}
+\item The sum of all real values of x satisfying the equation $(x^2-5x+5)^{x^2+4x+60}=1$ is :
+	\hfill\textbf{[JEE M 2016]}\\
+	\begin{enumerate}[label=\alph*.]
+	\begin{multicols}{2}
+        \item  6
+	\item  5
+        \item  3
+	\item -4
+	\end{multicols}
+	\end{enumerate}
+\item If $\alpha,\beta\in C$ are the distinct roots, of the equation $x^2-x+1=0$ , then $\alpha^{101}+\beta^{107}$ is equal to :
+	\hfill\textbf{[JEE M 2018]}\\
+	\begin{enumerate}[label=\alph*.]
+	\begin{multicols}{2}
+	\item  0   
+	\item  1
+	\item  2
+	\item -1
+	\end{multicols}
+	\end{enumerate}
+\item Let p,q$\in$ R. If $2-\sqrt{3}$ is a root of the quadratic equation, $x^2+px+q=0$,then:
+	\hfill\textbf{[JEE M 2019- 9 April(M)]}\\
+	\begin{enumerate}[label=\alph*.]
+	\begin{multicols}{2}
+	\item $p^2-4q+12=0$
+	\item $q^2-4p-16=0$
+	\item $q^2+4p+14=0$ 
+	\item $p^2-4q-12=0$
+	\end{multicols}
+	\end{enumerate}
 \end{enumerate}
 \end{document}
 
